@@ -1,0 +1,6 @@
+Ruby Oracle advice
+  * install activerecord-enhanced-oracle-adapter gem
+  * Benjamin Miller - CTAC - bmiller@ctacorp.com
+  * from https://twitter.com/#!/mpeteuil/status/70130581928804352 :
+    You'll need to use OCI8 2.0.x + activerecord-oracle_enhanced-adapter. OCI8 1.0.x won't work with enhanced. #railsconf #rails3up
+  
