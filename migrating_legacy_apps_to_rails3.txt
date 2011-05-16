@@ -1,0 +1,68 @@
+Twitter @crnixon
+
+Migrating Legacy Rails Apps to Rails 3
+
+bit.ly/rails3up
+http://pinboard.in/u:crnixon/t:rails3upgrade/
+
+Upgrade path from rails 2.3.x to rails3:
+ * upgrade to latest rails 2.3.x
+   rake rails:update
+ * fix deprecation warnings
+ * install rails_xss plugin and fix views.
+ * rename .rhtml, .rxml, .rjs files
+ * install Bundler
+   gem install xxx
+   rake rails:update:gems
+ * replace plugins with gems
+   put customized plugins into Gitbub and pull into Gemfile
+ * install rails_upgrade plugin
+    rake rails:upgrade:check # save output to a file
+    rake rails:upgrade:backup # gives a list of backed-up files
+    rake rails:upgrade:gems # doesn't check config/environments/*.rb for config.gem stuff
+    rake rails:upgrade:routes # not perfect, but mostly works in rails3
+    rake rails:upgrade:configuration # creates config/application.rb file
+ * remove preinitializer.rb if you were using Bundler before
+ * lib directory not autoloaded by default:
+    config.load_path += %W(#{config.root}/lib)
+ * ujs
+    add csrf_meta_tag inside <head>
+    install jquery-rails gem and install its rails.js to public/javascripts and include in app layout
+    
+
+XSS:
+ * =h not used anymore;  =raw is opposite of =h
+ * call :html_safe method on a String to 'make it safe'
+ * YAML locale stirings are escaped unless the key name ends in '_html'
+ * 
+ 
+How to install bundler gems in production:
+  bundle install --deployment
+
+git tips:
+ * git add --patch
+ * git add --edit
+Alternative to rvm and gemsets... install gems locally:
+  bundle install --path vendor
+  bundle package
+  check your Gemfile.lock into version control
+  
+
+Dependencies, etc:
+  * rspec:
+    * New rspec syntax
+      require 'rspec'
+      require 'rspec/rails'
+    * other rspec stuff
+      make sure rspec-rails in in the development and test groups in Gemfile
+      Cucumber uses the test environment now
+    * might need to install rpec2-rails-views-matchers gem
+  * factory_girl gem is renamed to factory_girl_rails gem for rails3
+  * rails3 branch of will_paginate is in beta
+    kaminari gem is stable and a good replacement for will_paginate
+  * 
+
+Ruby 1.9 stuff:
+  * new syntax for case statements (breaks old stuff)
+  * new optional syntax for Hash
+  
