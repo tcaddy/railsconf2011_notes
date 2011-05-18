@@ -1,0 +1,37 @@
+Why Can't I Test My Javascript
+
+need to split js code into testable units, not spaghetti code.
+
+(most) everything in js is an object.  we should test objects.
+
+don't put logic in the DOM.
+
+DOM is just an object.
+
+Test js the same way we test everything else.  Add structure to js and write it in a testable object-oriented manner.
+
+what should tests do:  ensure value (catching bugs is a side effect of tests)
+
+Two types of value:
+  * external value - end user will experience what app promises to do
+    * use end-to-end acceptance test 
+      * does it meet the external value?
+      * do we understand the external value?
+  * internal value - easy to change stuff within app w/o headaches
+    * acceptance tests != internal quality
+    * need isolated unit tests
+    * The act of writing test gives feedback on quality of code
+    * running a (successful) unit test tells us we haven't broken any object
+    * a unit test will NOT tell us if system works together as a whole
+
+Unit tests tell you that you built the system right, while Acceptance/Integration tests tell you that you built the right system.
+
+Acceptance/Integration tests:
+  * poke around at UI (as a user would) and verify expected functionality
+
+Unit tests:
+  * tests written for devs or development purposes
+
+
+
+
