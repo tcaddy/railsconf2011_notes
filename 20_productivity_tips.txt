@@ -1,0 +1,70 @@
+20 Productivity Tips presentation.
+
+Some days are productive, some are not.... why?
+
+Distaction is Evil
+
+If you think you can multi-task, you are delusional.
+
+productivity means you produce something towards a SMART goal in a given time period
+
+your goals need to be:
+  * achievable
+  * relevant (keep you engaged)
+  * have a deadline / have a schedule / have a timeline to completion
+  
+you need tools to achieve goals:
+  * your brain - it has limits to what it can pay attention to. Optical illusions used to demonstrate this.
+  * repetition helps you remember to long-term memory.  Memories with emotional attachment are easier to remember.
+
+Software Tools
+  * use vi(m), emacs, TextMate, IDE, or whatever works for you
+    * use muscle memory.  You shouldn't have to think to use your text editor
+  * tab completion
+    * shell
+    * git (git-completion.bash)
+    * irb (require 'irb/completion')
+  * unclutter Desktop (computer desktop)
+  * (OSX) disable dock, no bouncy icons
+  * Launcher
+    * (OSX) Quicksilver, LaunchBar, Alfred, DTerm
+    * (win) Enso
+  * Disable notifications (not important and is a distraction)
+  * use full screen mode - less distractions
+  * check email less frequently
+  * quit Twitter client
+  * Note taking apps
+    * (OSX) Notational Velocity, Voodoo Pad, DEVONThink
+    * (win) OneNote
+    * (OSX,win, and mobile devices) - Evernote
+  * Ambidexterity - try to use mouse with 'off-hand' so you can write/take notes
+  * Office Phone
+    * Do I really need to answer this?
+    * learn the tricks (xfer to another person or send to voicemail instead of picking up phone)
+  * Cell Phone
+    * caller id
+    * silence
+
+The Brain:
+  * Less stress = better learning
+  * stressful stimuli are considered to be hostile and out of control
+  * Master the process so you can:
+    * forget about source of stress
+    * 
+
+Getting things done:
+  * (Mac) OmniFocus, Things
+
+Pomodoro Technique:
+  * 25 min concentration + 5 minute breaks
+  * longer breaks every 4 Pomodori
+  * How to do this?
+    * timer
+    * inventory list (To Do list over time)
+    * to do today list
+    * records sheet
+
+
+
+
+  * dfd
