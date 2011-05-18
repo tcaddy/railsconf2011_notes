@@ -1,0 +1,26 @@
+MIGRATING TO RAILS 3 - AN IN-HOUSE DEVELOPER'S PERSPECTIVE
+
+Only migrate apps when there is a change request.  Unchanged apps stay in old versions of Rails.
+
+5 common problem areas:
+  1. Creating New Apps
+    Rails app templates are helpful
+  2. Background Jobs - 2 types:
+    * Scheduled Jobs
+    * Constantly running to process pending requests
+  3. Data Sharing
+    * Topic Subscriber approach
+    * sharing dbs b/t multiple apps:
+      * allow reading from either apps
+      * only one app can write
+      * if app doesn't own db, it uses resources to have the app owner make the write
+      * use abstact classes to read from db that isn't the main app connection db
+      * use mysql replication to avoid hitting transaction db for read-only apps
+  4. Authentication
+    * single sign-on is important so you can switch b/t apps
+      * legacy way:  set a domain level cookie that all apps can set/get
+      * new way: Rails as master, support legacy apps, support 3rd party apps
+        * use devise and omniauth with OAuth2
+        * single sign-on AND single logout (by expiring domain cookie)
+  5. App Configuration
+    * DRY principles for common config settings across all apps
