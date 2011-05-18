@@ -1,0 +1,49 @@
+Keeping Rails on Tracks presentation
+
+slides: http://speakerrate.com/talks/7575
+
+What does on th Tracks mean?
+  * working code?
+  * sexy code?
+  * maintainable code? (can other people read it?)
+  * a product is only a product when it is delivered. What is the product?
+  * budget matters - don't waste time on code if it won't be a product, and spend time wisely
+  * trade-offs are part of life - not all ugly code needs refactoring
+  * you are not selling code - you sell a solution
+  * deployment is a first class citizen
+    * document how to do this in README
+    * server setup needs to have a repeatable configuration
+    * use bundler
+      * be explicit in versions
+      * only lock to git repos you own.  Fork the ones you don't own, make a branch, and then depend on your branch of your fork.
+    * repeatable deployment - use common deployment methods
+    * make a db/seeds.rb file
+    * link in security - no passwords stored in source control
+    * document:
+      * steps to deploy
+      * are SSH keys necessary
+      * db seeding and setup
+  * fast page == happy client
+    * minify js and css; use css sprites
+    * use rails caching: fragment cache, action cache, page cache
+  * big session == slow site
+    * session values, not session objects
+    * store only strings or numbers
+    * don't create a session for every visitor, only do it for visitors that become customers
+  * less code == less bugs
+  * being smart can be stupid
+    * keep tests simple
+    * use test helpers to keep blocks of code from getting too big to read
+    * simple is better than complex - what you leave out is almost more important than what you put in
+  * good code is easy to read - The harder it is to read, the more likely it will have to be rewritten
+  * reinvention is overrated
+  * use the write tool for the job
+  * databases have feelings too - you don't need database agnostic code if db isn't going to change
+    * raw SQL is OK to use if it drastically saves time
+    * don't share the db - refactor into API calls
+
+How to stay on track?
+  * apps that work, are easy to maintain, and bug-free
+  * MAKE RAILS CODE MAINTAINABLE
+  * get your code inspected.  many consultants do it.  ask for a sample.
+
