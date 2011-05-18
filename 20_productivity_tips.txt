@@ -50,7 +50,6 @@ The Brain:
   * stressful stimuli are considered to be hostile and out of control
   * Master the process so you can:
     * forget about source of stress
-    * 
 
 Getting things done:
   * (Mac) OmniFocus, Things
@@ -63,8 +62,3 @@ Pomodoro Technique:
     * inventory list (To Do list over time)
     * to do today list
     * records sheet
-
-
-
-
-  * dfd
