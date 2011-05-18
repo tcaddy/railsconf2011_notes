@@ -1,0 +1,74 @@
+Testing the Impossible
+
+Will be going through Copycopter client.  What is that?
+  * write place holders in code where things are uploaded to copycopter
+  * anyone can edit from copycopter
+  * copycopter changes pushed back to app
+  
+Copyclient requirements (when they built it):
+  * automatic
+  * easy to setup
+  * cannot affect production performance
+
+Copyclient features:
+  * 100% test driven
+
+Don't mix concerns.  Separation of Concerns:
+  * single responsibility principle:  every object should have a single responsibility that is defined by its class.  
+    * A responsibility is a reason for change.
+  * the more things you have to test, the harder, slower, and more confusing it becomes
+
+Inherit Less:
+  * cannot test sub-class without testing super-class
+
+Prefer composition to inheritance:
+  * things are not usually hierarchal
+
+Don't Depend on Concretions:
+  * Dependency Inversion Principle: high level modules should not depend on low level modules
+  * dependency injection: wiki this to learn more
+
+Avoid Soup
+
+Create Seams:
+  * composed methods that support dependency injection
+
+Testing Design:
+  * test scope:
+    * unit, component, isolation
+    * functional, acceptance, integration, full stack
+  * restrict fixture scope:
+    * use fresh fixtures - create what you need for test in the test
+  * avoid test helpers
+    * test doubles:
+      * stubs, mocks, proxies, and fakes
+      * USE FAKES:
+        * easier to be DRY, easier to be strict
+        * easy to distribute / share with others
+
+Rails:
+  * stay generic:
+    * use middleware when possible
+    * avoid monkey patches
+    * keep business logic outside engine parts
+    * use Railties only for configuration/initialization
+  * integration test
+    * generate a rails app
+    * install your gem
+    * exercise major paths
+    * boot a server process if you need to
+    * test across several versions
+  * isolation tests:
+    * unit test components without Rails
+    * don't even load ActiveSupport
+    * test Rails-specific components separately
+    * use fakes
+
+Don't be afraid
+
+
+
+
+
+
+
