@@ -1,0 +1,94 @@
+Testing Legacy Code
+
+If you have to "rescue" code, you should respect the code.  Even if you think the last person is an idiot, you need to move past that pretty quickly.
+
+We should read book 'Dealing Effectively With Legacy Code'
+
+What is a Legacy Application?
+  * code without tests
+  * code that was based on lost requirements
+
+What to do with a legacy app?
+  * respect the working code.  do no harm.
+  * deliver features.  code needs to evolve (at a sustainable pace).
+  * improve code quality (over time)
+  * The Boy Scout Rule: always leave the campsite at least as good or better than you found it.
+
+Our rescue project needs to change:
+  * writing complete test coverage before making a change is a BAD move
+    * WHY?
+      * Too much work (days/weeks/months of work). Not a quick win.
+      * Not adding value, not improving sustainability.
+      * You can introduce bugs.
+    * If you are the 'idiot' who wrote the original code, it still isn't recommended that you do this.
+  * making a quick change and dropping in more code (w/o test) is a BAD move
+    * WHY?
+      * sets a bad precedent and diminishes (in eyes of client) the value of tests
+      * do what you say you are going to do (assumes that you said you would write a test suite as the person rescuing app)
+      * doesn't make anything better
+  * Writing tests for new changes is a GOOD move.
+    * over time, test coverage and code quality will grow organically
+
+Why isn't this easy?
+  * you don't know what to test. you don't know what acceptable behavior is
+  * hard to isolate objects under test
+  * git is your friend
+    * use git bisect to separate good code from bad code (in terms of commit history)
+    * frequently commit code in small bits
+
+Cucumber:
+  * advantages for dealing w/ legacy code:
+    * independent of code base (less likely for you to break things)
+    * cover a lot of the app quickly
+    * good starting point
+  * disadvantages:
+    * slow to run.  If a test takes more than a minute, that is BAD.
+      * try not to create a lot of objects in cucumber
+    * Not good at isolating the cause of a problem
+
+Test-Driven Exploration:
+  * like TDD, but cheating
+  * Red. Make it green. Refactor.
+  * the code is the source of truth.
+
+Mock Testing
+  * exact opposite of Cucumber  
+  * advantages:
+    * another way to test without caring about structure of code
+    * very fast
+    * allow unit testing
+  * disadvantages:
+    * hard to setup
+    * tests become brittle over time and can affect future coding/testing
+
+Isolation:
+  * Only touch old code if it is called by new methods
+  * you can create new sub-classes for testing (technically a mock with same disadvantages)
+
+Default Method Arguments
+  * add a new argument to legacy methods to let them handle old and new code
+
+Singleton Classes (mock object)
+  * create object and add/override a method to singleton class
+
+Duck Typing (mock object)
+  * create a new class instead of sub-class of existing class
+
+Pebble Technique:
+  * you can get the call stack from any method in Ruby (google Pebble technique)
+  * helps you debug the life cycle of an object
+
+What about bad tests?
+  * make sure the test suite runs green
+  * tests are also code (DRY, other code principles)
+  * the 5 minute rule:
+    * if you cannot figure out what a test does in 5 minutes, you delete it (or comment it out)
+
+When to refactor?
+  * if you cannot test without refactoring
+  * complicated refactors should only be tied to actual new requests
+  * check out a gem called turbulence
+    * gives flog complexity over commit history
+
+
+
