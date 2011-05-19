@@ -1,0 +1,55 @@
+BUILDING PAGELESS APPS WITH RAILS AND BACKBONE.JS
+
+benefits of pageless:
+  * speed
+  * no flash of white during a page reload
+
+Pageless apps:
+  * GMail
+
+Users start to drop off when it takes more than 1 second for response time.  After 10 second wait, user is basically gone,
+
+Do no harm to users:
+  * don't take away forward and back buttons
+  * allow bookmarking
+
+Use hash in URL to do no harm.
+
+backbone.js:
+  * less than 4kb
+  * readable source
+  * 1000 lines of annotated source
+
+sample app:
+  * expand on pastie.org with more features
+
+jammit:
+  * a gem to manage js when you have too much js library files
+  * auto minifies js during deploy
+  * .jst extensions are compiled into a js function
+
+javascript templates are your friend.  Use one that you like.
+
+backbone.js
+  * hints:
+    * 'this' is for objects
+    * use event.currentTarget
+  * controllers:
+    * watch the page fragment and do something when it changes
+      Backbone.history.start();
+    * routes page fragments to functions
+  * views:
+    * presentation and behavior
+    * template, initialize, and render functions
+    * a view can inherit another view
+  * models:
+    * js class
+    * if it has an id attribute, it is saved.  No id means unsaved or new
+  * collections:
+    * uses underscore.js enumerable functions
+    * 
+
+Interlude:
+  * function(){} === lambda{}
+
+
