@@ -1,0 +1,26 @@
+BRIDGING THE GAP - USING JAVASCRIPT IN RAILS TO WRITE DRY RICH CLIENT APPLICATIONS
+
+JS is cool and great, but can have some drawbacks.
+
+Problem: repitition of code in JS and Ruby:
+  * Ruby in Javascript:
+    * doesn't really work, but fun for a toy
+  * Javascript in Ruby:
+    * Ruby Racer - uses V8 js processing engine in Ruby
+      * easy to use
+      * you can add new js functions by writing Ruby class methods
+      * you can write js functions that can be called by Ruby (using V8)
+
+Idioms / Structure
+  * The Javascript Way:
+    * Standard Library for JS:
+      * CommonJS, CommonJS Modules
+      * Nodejs, V8
+    * CommonJS Module:
+      * exports a public API
+      * You can use Ruby modules to write a CommonJS modules (and use them with IncludeJS)
+
+Future of JS and Rails:
+  * not sure if new include sytanx for Rails/JS/CoffeeScript is the best way to go.
+
+
