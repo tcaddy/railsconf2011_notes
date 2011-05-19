@@ -1,0 +1,57 @@
+Securing Your Rails Application
+
+Rails defaults are actually pretty good for security, but you still need to learn about this.
+
+Don't trust browser, don't trust database; trust the app server
+
+SQL injection prevention - use question mark in conditions
+
+White List is better than Black List
+  * use attr_accessible (white list), not attr_protected (black list)
+  
+Session Keys:
+  * Read "A Lesson in Timing Hacks" article for explanation
+
+Detect social network authentication status:
+  * using js in client can make a call to FB and find out if user is logged in
+
+XSS (Cross-Site Scripting)
+  * HTML escape user submitted data when re-displaying data in view (use <=h %> in pre Rails3; don't use <%=raw %> in Rails3)
+  * whitelist HTML tags if you need to allow HTML tags (or use Markdown, Redcloth, Textile, etc)
+  * do not use a black list, do not try to correct malicious code
+  * use sanitize Rails helper and don't try to write your own
+
+Authentication != Authorization
+  * Authentication: who are you?
+  * Authorization: who do you want?  or What are you allowed to do?
+    * don't blindly accept params[:id] or params[:xxx_id] values. Make sure user is allowed to access the record identified by id
+    * do this (check for current_user 1st to avoid whiny nils):  
+      if @whatever=current_user.whatevers.find(params[:whatever_id])
+        # everything is safe and OK
+      else
+        # bad user.  deny!!!
+      end
+
+CanCan by Ryan Bates:
+  * good authorization scheme
+
+CSRF (Cross Site Request Forgery):
+  * the authenticity token thing for form submits is a good thing
+  * XSS can still default CSRF (when user clicks on something they shouldn't)
+  * SSL - can prevent a lot of stuff - Strict Site Security (I think is the name, slide moved by too fast)
+    * offer users an option to always use SSL
+    OR
+    * just force SSL for everything during login, while logged in, and until logout (after logout, really)
+
+Security patches:
+  * keep up to date.
+  * even older versions of rails get security patches.  Updating a minor release is easy.
+  * monitor plugins and gems for updates, too
+  * OS updates, of course, too
+  * join the Rails security updates mailing list
+  * try to upgrade to Rails3
+
+Do a security audit:
+  * you need a fresh set of eyes to find the vulnerabilities that you don't see
+
+Be aware (think like a hacker)
